@@ -45,6 +45,71 @@ img{max-width:100%; display:block}
 
 .container{width:min(1140px, 100% - 2rem); margin:0 auto}
 
+.spinnawinna-site-hero{
+  position:relative;
+  padding:clamp(2.6rem, 6vw, 4.2rem) 0;
+  overflow:hidden;
+}
+.spinnawinna-site-hero::before,
+.spinnawinna-site-hero::after{
+  content:"";
+  position:absolute;
+  width:380px; height:380px;
+  border-radius:50%;
+  filter:blur(120px);
+  opacity:0.32;
+  z-index:0;
+}
+.spinnawinna-site-hero::before{top:-120px; left:-60px; background:radial-gradient(circle, rgba(112,240,199,0.45), transparent 60%)}
+.spinnawinna-site-hero::after{bottom:-140px; right:-20px; background:radial-gradient(circle, rgba(245,196,82,0.45), transparent 60%)}
+.hero-inner{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1.05fr 0.95fr;
+  gap:1.6rem;
+  align-items:center;
+}
+.hero-copy{text-align:left}
+.hero-title{
+  font-family:var(--font-heading);
+  font-size:2.5rem;
+  line-height:1.08;
+  margin:0 0 0.55rem;
+}
+.hero-sub{color:var(--muted); margin:0 0 0.4rem; max-width:720px}
+.hero-cta{display:flex; gap:0.7rem; flex-wrap:wrap; margin-top:0.9rem}
+.hero-visual{
+  background:linear-gradient(150deg, rgba(245,196,82,0.16), rgba(112,240,199,0.12));
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:1rem;
+  box-shadow:var(--shadow);
+}
+.hero-visual .pill{margin-bottom:0.5rem}
+.hero-visual img{border-radius:12px; box-shadow:0 16px 38px rgba(0,0,0,0.55)}
+.hero-badges{display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:0.6rem}
+.tile-stack{
+  padding:2.4rem 0;
+  background:rgba(255,255,255,0.02);
+}
+.tile-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:1rem;
+  margin-top:1.1rem;
+}
+.tile-card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:1.05rem 1.2rem;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+}
+.tile-card h4{margin:0 0 0.35rem; font-family:var(--font-heading); color:var(--heading)}
+.tile-card p{margin:0; color:var(--muted)}
+.tile-card .pill{margin-bottom:0.35rem}
+
 .notice-banner{
   background:linear-gradient(135deg, var(--accent), var(--accent-2));
   color:#031017;
@@ -150,7 +215,6 @@ img{max-width:100%; display:block}
 
 .spinnawinna-site-play{
   padding:3.5rem 0;
-  text-align:center;
 }
 .game-wrapper{
   margin:2rem auto;
@@ -185,6 +249,28 @@ img{max-width:100%; display:block}
   color:var(--muted);
   font-weight:600;
 }
+.game-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.2rem;
+  margin-top:1.4rem;
+}
+.game-card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:1rem 1rem 1.2rem;
+  box-shadow:var(--shadow);
+}
+.game-card .pill{margin-bottom:0.4rem}
+.game-card h3{
+  margin:0 0 0.35rem;
+  color:var(--heading);
+  font-family:var(--font-heading);
+}
+.game-card p{margin:0.1rem 0 0.8rem; color:var(--muted)}
+.game-card .game-frame{margin-top:0.2rem}
+.game-grid .game-card:first-child{grid-column:1 / -1}
 
 .spinnawinna-site-footer{
   background:rgba(6,10,20,0.95);
@@ -263,6 +349,13 @@ img{max-width:100%; display:block}
   border:0;
 }
 
+@media (max-width: 992px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-copy{text-align:center}
+  .hero-cta,
+  .hero-badges{justify-content:center}
+  .game-grid{grid-template-columns:1fr}
+}
 @media (max-width: 768px){
   .game-frame{max-width:100%}
   .spinnawinna-site-nav{padding:0.75rem 0}
@@ -278,7 +371,7 @@ img{max-width:100%; display:block}
 <div class="notice-banner notice-banner-d4v6">
   <div class="container container-n5s9 banner-inner banner-inner-e0g3">
     <span class="banner-pill banner-pill-u5l2">18+</span>
-    <span>JackpotHub is a free-to-play social casino experience. No real-money gambling or prizes. 18+ only. Please play responsibly.</span>
+    <span>spinnawinna is a free-to-play social casino experience. No real-money gambling or prizes. 18+ only. Please play responsibly.</span>
   </div>
 </div>
 
@@ -286,7 +379,7 @@ img{max-width:100%; display:block}
 <nav class="navbar navbar-h1d6 navbar-expand-lg navbar-expand-lg-x1e0 spinnawinna-site-nav spinnawinna-site-nav-s2b8">
   <div class="container container-n5s9 d-flex d-flex-l2v1 align-items-center align-items-center-i0e4 justify-content-between justify-content-between-u9t9">
     <a class="navbar-brand navbar-brand-e4n4" href="/">
-      <img class="brand-logo brand-logo-y2l5" src="../assets/img.png" alt="JackpotHub logo">
+      <img class="brand-logo brand-logo-y2l5" src="../assets/img.png" alt="spinnawinna logo">
       <span class="sr-only sr-only-l6n5">spinnawinna.site</span>
     </a>
     <button class="navbar-toggler navbar-toggler-s3p3" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -307,39 +400,84 @@ img{max-width:100%; display:block}
 </nav>
 
 <main>
-  <!-- Play gallery of external demos -->
-  <section class="spinnawinna-site-play spinnawinna-site-play-n0x6">
-    <div class="container container-n5s9">
-      <h1 class="section-title section-title-a7o7">Play demos</h1>
-      <p class="section-sub section-sub-x7g6">Free-to-play social casino style experiences. External embeds, no deposits or prizes.</p>
+  <section class="spinnawinna-site-hero">
+    <div class="container container-n5s9 hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Instant, no-download</p>
+        <h1 class="hero-title">spinnawinna rotates three quick sessions for campaign previews.</h1>
+        <p class="hero-sub">A tight, free-to-play set of social casino style demos. No signups, no banking—just instant, 18+ entertainment.</p>
+        <div class="hero-cta">
+          <a href="#sessions" class="spinnawinna-site-btn spinnawinna-site-btn-g5k6 primary">Jump to sessions</a>
+          <a href="/disclaimer" class="spinnawinna-site-btn spinnawinna-site-btn-g5k6 outline">See the guardrails</a>
+        </div>
+        <div class="hero-badges">
+          <span class="pill accent"><i class="fa-solid fa-gauge-high"></i>Fast loads</span>
+          <span class="pill"><i class="fa-solid fa-mobile-screen"></i>Mobile first</span>
+          <span class="pill"><i class="fa-solid fa-shield"></i>18+ entertainment</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="pill accent"><i class="fa-solid fa-eye"></i>Preview-ready</div>
+        <img src="../assets/herobackground01.webp" alt="spinnawinna gameplay montage">
+      </div>
+    </div>
+  </section>
 
-      <div class="game-wrapper game-wrapper-e0p2">
-        <div class="w-100 w-100-h5f9">
-          <div class="pill pill-a5k8 accent accent-l0a5">Live preview</div>
+  <section class="tile-stack">
+    <div class="container container-n5s9">
+      <h2 class="section-title section-title-a7o7">What to expect</h2>
+      <p class="section-sub section-sub-x7g6">Short sessions, respectful pacing, no surprises.</p>
+      <div class="tile-grid">
+        <div class="tile-card">
+          <div class="pill accent"><i class="fa-solid fa-lock"></i>Safe space</div>
+          <h4>No money flows</h4>
+          <p>Practice mode only. No deposits, jackpots, or prizes.</p>
+        </div>
+        <div class="tile-card">
+          <div class="pill"><i class="fa-solid fa-clock"></i>Fast breaks</div>
+          <h4>2–3 minute bursts</h4>
+          <p>Spin, reset, and bounce. Perfect for campaign previews.</p>
+        </div>
+        <div class="tile-card">
+          <div class="pill"><i class="fa-solid fa-signal"></i>Device-friendly</div>
+          <h4>Responsive frames</h4>
+          <p>Desktop or mobile, the layout holds together without zooming.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sessions" class="spinnawinna-site-play spinnawinna-site-play-n0x6">
+    <div class="container container-n5s9">
+      <div class="game-grid">
+        <div class="game-card">
+          <div class="pill accent">Live preview</div>
+          <h3>Stadium of Riches</h3>
+          <p>Desktop focus, vibrant reels, a clean chrome-free frame.</p>
           <div class="game-frame game-frame-d2c1">
             <iframe src="https://released.playngonetwork.com/casino/ContainerLauncher?pid=2&gid=stadiumofriches&lang=en_GB&practice=1&channel=desktop&demo=2&refresh=1763688384036" title="Stadium of Riches" allowfullscreen loading="lazy"></iframe>
           </div>
-          <p class="game-caption game-caption-y9s6">Embedded demo: Stadium of Riches (external launch).</p>
+          <p class="game-caption game-caption-y9s6">External embed, practice mode only.</p>
         </div>
-      </div>
 
-      <div class="game-wrapper game-wrapper-e0p2">
-        <div class="w-100 w-100-h5f9">
-          <div class="pill pill-a5k8 accent accent-l0a5">Mobile-friendly preview</div>
+        <div class="game-card">
+          <div class="pill accent">Mobile-friendly</div>
+          <h3>Rings of Prosperity</h3>
+          <p>Optimized for phones with lightweight motion and crisp type.</p>
           <div class="game-frame game-frame-d2c1">
             <iframe src="https://released.playngonetwork.com/casino/ContainerLauncher?pid=2&gid=ringsofprosperity&lang=en_GB&practice=1&channel=mobile&demo=2&refresh=1763688502976" title="Rings of Prosperity" allowfullscreen loading="lazy"></iframe>
           </div>
-          <p class="game-caption game-caption-y9s6">Embedded demo: Rings of Prosperity (external launch).</p>
+          <p class="game-caption game-caption-y9s6">External embed, practice mode only.</p>
         </div>
-      </div>
 
-      <div class="game-wrapper game-wrapper-e0p2">
-        <div class="w-100 w-100-h5f9">
-          <div class="pill pill-a5k8 accent accent-l0a5">Low-motion preview</div>
+        <div class="game-card">
+          <div class="pill accent">Low-motion</div>
+          <h3>Lawn n Disorder</h3>
+          <p>Softer motion profile for quick checks without visual overload.</p>
           <div class="game-frame game-frame-d2c1">
             <iframe src="https://released.playngonetwork.com/casino/ContainerLauncher?pid=2&gid=lawnndisorder&lang=en_GB&practice=1&channel=mobile&demo=2&refresh=1763688570336" title="Lawn n Disorder" allowfullscreen loading="lazy"></iframe>
           </div>
-          <p class="game-caption game-caption-y9s6">Embedded demo: Lawn n Disorder (external launch).</p>
+          <p class="game-caption game-caption-y9s6">External embed, practice mode only.</p>
         </div>
       </div>
     </div>
@@ -350,7 +488,7 @@ img{max-width:100%; display:block}
 <footer class="spinnawinna-site-footer spinnawinna-site-footer-e3t4">
   <div class="container container-n5s9">
     <div class="footer-brand footer-brand-b0c2">
-      <img class="brand-logo brand-logo-y2l5" src="../assets/img.png" alt="JackpotHub logo">
+      <img class="brand-logo brand-logo-y2l5" src="../assets/img.png" alt="spinnawinna logo">
       <span class="sr-only sr-only-l6n5">spinnawinna.site</span>
     </div>
 

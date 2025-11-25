@@ -179,10 +179,11 @@ img{max-width:100%; display:block}
   position:relative;
   z-index:1;
   display:grid;
-  grid-template-columns:1fr;
-  gap:1.6rem;
-  text-align:center;
+  grid-template-columns:1.05fr 0.95fr;
+  gap:1.8rem;
+  align-items:center;
 }
+.hero-copy{text-align:left}
 .hero-title{
   font-family:var(--font-heading);
   font-size:2.8rem;
@@ -191,16 +192,19 @@ img{max-width:100%; display:block}
 }
 .hero-sub{
   color:var(--muted);
-  margin:0 auto;
+  margin:0 0 0.5rem;
   max-width:780px;
 }
-.hero-cta{display:flex; justify-content:center; gap:0.8rem; flex-wrap:wrap; margin-top:1.1rem}
-.hero-badges{
-  display:flex;
-  justify-content:center;
-  gap:0.6rem;
-  flex-wrap:wrap;
+.hero-cta{display:flex; justify-content:flex-start; gap:0.8rem; flex-wrap:wrap; margin-top:1.1rem}
+.hero-badges{display:flex; justify-content:flex-start; gap:0.6rem; flex-wrap:wrap; margin-top:0.4rem}
+.hero-visual{
+  background:linear-gradient(150deg, rgba(245,196,82,0.16), rgba(112,240,199,0.12));
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:1.1rem;
+  box-shadow:var(--shadow);
 }
+.hero-visual img{border-radius:12px; box-shadow:0 18px 44px rgba(0,0,0,0.55)}
 .pill{
   display:inline-flex;
   align-items:center;
@@ -218,6 +222,26 @@ img{max-width:100%; display:block}
   color:var(--accent);
   border-color:rgba(245,196,82,0.4);
 }
+.tile-stack{
+  padding:2.6rem 0;
+  background:rgba(255,255,255,0.02);
+}
+.tile-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+  gap:1rem;
+  margin-top:1.4rem;
+}
+.tile-card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:1.1rem 1.2rem;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+}
+.tile-card h4{margin:0 0 0.35rem; font-family:var(--font-heading); color:var(--heading)}
+.tile-card p{margin:0; color:var(--muted)}
+.tile-card .pill{margin-bottom:0.35rem}
 
 .spinnawinna-site-disclaimer-card{padding:3rem 0}
 .disclaimer-box{
@@ -551,15 +575,14 @@ img{max-width:100%; display:block}
 }
 
 @media (max-width: 992px){
-  .about-grid,
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
+  .hero-inner{grid-template-columns:1fr}
+  .hero-copy{text-align:center}
+  .hero-cta,
+  .hero-badges{justify-content:center}
   .hero-title{font-size:2.4rem}
 }
 @media (max-width: 768px){
   .hero-title{font-size:2.05rem}
-  .game-frame{max-width:100%}
   .spinnawinna-site-nav{padding:0.75rem 0}
 }
 @media (max-width: 576px){
@@ -574,14 +597,14 @@ img{max-width:100%; display:block}
 <div class="notice-banner notice-banner-e5s8">
   <div class="container container-y8i1 banner-inner banner-inner-q1h5">
     <span class="banner-pill banner-pill-j0j6">18+</span>
-    <span>JackpotHub is a free-to-play social casino experience. No real-money gambling or prizes. 18+ only. Please play responsibly.</span>
+    <span>spinnawinna is a free-to-play social casino experience. No real-money gambling or prizes. 18+ only. Please play responsibly.</span>
   </div>
 </div>
 
 <nav class="navbar navbar-x3m9 navbar-expand-lg navbar-expand-lg-g0e0 spinnawinna-site-nav spinnawinna-site-nav-f4h6">
   <div class="container container-y8i1 d-flex d-flex-t3n4 align-items-center align-items-center-h2j8 justify-content-between justify-content-between-f1r2">
     <a class="navbar-brand navbar-brand-s2x9" href="/">
-      <img class="brand-logo brand-logo-b0x8" src="../assets/img.png" alt="JackpotHub logo">
+      <img class="brand-logo brand-logo-b0x8" src="../assets/img.png" alt="spinnawinna logo">
       <span class="sr-only sr-only-h5i1">spinnawinna.site</span>
     </a>
     <button class="navbar-toggler navbar-toggler-x0c2" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -600,6 +623,52 @@ img{max-width:100%; display:block}
     </div>
   </div>
 </nav>
+
+<section class="spinnawinna-site-hero">
+  <div class="container container-y8i1 hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">House rules</p>
+      <h1 class="hero-title">Clear terms so everyone knows the lane.</h1>
+      <p class="hero-sub">These guidelines keep spinnawinna.site honest: entertainment-only, 18+, and focused on respectful use of our assets.</p>
+      <div class="hero-cta">
+        <a href="#terms-and-conditions" class="spinnawinna-site-btn spinnawinna-site-btn-g5k6 primary">Skip to full terms</a>
+        <a href="/#contact" class="spinnawinna-site-btn spinnawinna-site-btn-g5k6 ghost">Ask a question</a>
+      </div>
+      <div class="hero-badges">
+        <span class="pill accent"><i class="fa-solid fa-scale-balanced"></i>Fair use</span>
+        <span class="pill"><i class="fa-solid fa-ban"></i>No cash flows</span>
+        <span class="pill"><i class="fa-solid fa-shield"></i>Brand respect</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="../assets/herobackground01.webp" alt="Terms overview visual">
+    </div>
+  </div>
+</section>
+
+<section class="tile-stack">
+  <div class="container container-y8i1">
+    <h2 class="section-title section-title-q8b8">Snapshot</h2>
+    <p class="section-sub section-sub-q2n7">The quick read before the fine print.</p>
+    <div class="tile-grid">
+      <div class="tile-card">
+        <div class="pill accent"><i class="fa-solid fa-heart"></i>Play kind</div>
+        <h4>Respectful use</h4>
+        <p>No scraping, tampering, or misrepresenting the brand or experience.</p>
+      </div>
+      <div class="tile-card">
+        <div class="pill"><i class="fa-solid fa-puzzle-piece"></i>Purpose-built</div>
+        <h4>Entertainment focus</h4>
+        <p>Sessions are demos only—no prizes, payouts, or deposit mechanics.</p>
+      </div>
+      <div class="tile-card">
+        <div class="pill"><i class="fa-solid fa-pen-to-square"></i>Evolving rules</div>
+        <h4>Updates happen</h4>
+        <p>We may adjust these terms as the product evolves. Staying means you agree.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="terms-and-conditions" class="spinnawinna-site-legal spinnawinna-site-legal-b6j3">
   <div class="container container-y8i1">
@@ -657,7 +726,7 @@ img{max-width:100%; display:block}
 <footer class="spinnawinna-site-footer spinnawinna-site-footer-i1v5">
   <div class="container container-y8i1">
     <div class="footer-brand footer-brand-w6h7">
-      <img class="brand-logo brand-logo-b0x8" src="../assets/img.png" alt="JackpotHub logo">
+      <img class="brand-logo brand-logo-b0x8" src="../assets/img.png" alt="spinnawinna logo">
       <span class="sr-only sr-only-h5i1">spinnawinna.site</span>
     </div>
 
